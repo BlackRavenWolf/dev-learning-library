@@ -1,10 +1,12 @@
 # Developer Intelligence Dashboard
 
-A small learning project that builds a personal **Developer Intelligence Dashboard** using HTML, CSS, and JavaScript.
+A small learning project that builds a personal **Developer Intelligence Dashboard** using **HTML, CSS, and JavaScript**.
 
-The dashboard collects useful developer resources such as news sites, security sources, blogs, tools, and YouTube channels in one overview.
+The dashboard collects useful developer resources such as news sites, security sources, blogs, tools, documentation, and YouTube channels in one overview.
 
-The project automatically generates the dashboard sections using JavaScript instead of writing all links manually in HTML.
+Instead of writing all links manually in HTML, the dashboard **generates the sections dynamically using JavaScript** from a structured data object.
+
+This makes the project easier to maintain and expand while learning web development.
 
 ---
 
@@ -14,65 +16,119 @@ This project exists as a **learning exercise** while studying web development.
 
 It demonstrates how to:
 
-* structure a simple web project
-* separate HTML, CSS, and JavaScript
-* generate HTML elements dynamically using JavaScript
-* work with objects and arrays
-* loop through data structures
-* manipulate the DOM
-* debug code using `console.log`
+- structure a simple web project
+- separate **HTML, CSS, and JavaScript**
+- generate HTML elements dynamically using JavaScript
+- work with **objects and arrays**
+- loop through data structures
+- manipulate the **DOM**
+- debug code using `console.log`
+
+The project also serves as a **personal developer resource dashboard** that can grow over time.
 
 ---
 
 # Features
 
-The dashboard currently includes these categories:
+The dashboard currently includes the following resource categories:
 
-### DAILY
+## DAILY
 
-* Hacker News
-* Dev.to
-* GitHub Trending
-* Reddit Programming
+- Hacker News  
+- Dev.to  
+- GitHub Trending  
+- Reddit Programming  
 
-### SECURITY
+---
 
-* NVD
-* CVE
-* OWASP
-* Snyk
+## SECURITY
 
-### FRONTEND
+- NVD  
+- CVE  
+- OWASP  
+- Snyk  
+- PortSwigger Blog  
+- The Hacker News  
 
-* CSS Tricks
-* Smashing Magazine
-* MDN
-* Web.dev
+---
 
-### BACKEND
+## FRONTEND
 
-* InfoQ
-* Martin Fowler
-* High Scalability
+- CSS Tricks  
+- Smashing Magazine  
+- MDN  
+- Web.dev  
+- Frontend Masters Blog  
 
-### TOOLS
+---
 
-* GitHub Trending
-* Product Hunt
-* NPM Trends
+## BACKEND
 
-### VIDEO
+- InfoQ  
+- Martin Fowler  
+- High Scalability  
+- Node.js Blog  
+- Netflix Tech Blog  
 
-* Fireship
-* Traversy Media
-* Web Dev Simplified
-* Theo (t3.gg)
-* The Primeagen
-* Computerphile
-* Low Level Learning
-* John Hammond
+---
 
-All sections are generated dynamically from a JavaScript data object.
+## TOOLS
+
+- GitHub Trending  
+- Product Hunt  
+- NPM Trends  
+- StackShare  
+- AlternativeTo  
+
+---
+
+## VIDEO
+
+- Fireship  
+- Traversy Media  
+- Web Dev Simplified  
+- Theo (t3.gg)  
+- The Primeagen  
+- Computerphile  
+- Low Level Learning  
+- John Hammond  
+- LiveOverflow  
+
+---
+
+## JS ECOSYSTEM
+
+- JavaScript Weekly  
+- React Docs  
+- TypeScript Docs  
+- Node.js Docs  
+- Express Docs  
+- React Blog  
+- TypeScript Blog  
+- Node.js Blog  
+
+---
+
+## DATABASES
+
+- PostgreSQL Docs  
+- SQLBolt  
+- DB Fiddle  
+- Prisma Docs  
+- PlanetScale Blog  
+
+---
+
+## PYTHON
+
+- Python Docs  
+- Real Python  
+- PyPI  
+- Python Weekly  
+
+---
+
+All sections are generated **automatically from a JavaScript data object**, making it easy to add or remove resources without editing the HTML.
 
 ---
 
@@ -88,55 +144,74 @@ dev-news-dashboard
     └─ script.js
 ```
 
-### index.html
+## index.html
 
-Contains the page structure and a container where the dashboard is rendered.
+Contains the basic page structure and a container where the dashboard will be rendered.
 
-### css/style.css
+---
 
-Handles the styling of the layout, cards, grid system, and typography.
+## css/style.css
 
-### js/script.js
+Handles the styling of the page, including:
 
-Contains the dashboard data and dynamically builds the sections using JavaScript.
+- layout
+- dashboard grid
+- cards
+- typography
+- colors and shadows
+
+---
+
+## js/script.js
+
+Contains:
+
+- the developer resource data
+- logic for generating the dashboard
+- DOM manipulation code
+- debugging output using `console.log`
 
 ---
 
 # How It Works
 
-The dashboard data is stored in a JavaScript object:
+All resources are stored in a JavaScript object:
 
-```
-devSources = {
+```javascript
+const devSources = {
   DAILY: [...],
   SECURITY: [...],
   FRONTEND: [...],
   BACKEND: [...],
   TOOLS: [...],
-  VIDEO: [...]
-}
+  VIDEO: [...],
+  "JS ECOSYSTEM": [...],
+  DATABASES: [...],
+  PYTHON: [...]
+};
 ```
 
 The script then:
 
 1. Loops through each category
-2. Creates a section element
-3. Adds a title and source count
-4. Generates a list of links
-5. Appends everything to the dashboard container
+2. Creates a dashboard section
+3. Adds the category title
+4. Displays the number of resources
+5. Generates a list of links
+6. Appends everything to the dashboard container
 
-This demonstrates basic **DOM manipulation**.
+This demonstrates basic **DOM manipulation and dynamic rendering**.
 
 ---
 
 # Debugging
 
-During development the script uses `console.log()` statements to show:
+During development the script uses `console.log()` statements to display:
 
-* when the script starts
-* when sections are created
-* which items are being added
-* when the dashboard build is complete
+- when the script starts
+- which categories are being processed
+- which resources are being added
+- when the dashboard build is complete
 
 You can view this output in the browser console:
 
@@ -144,18 +219,21 @@ You can view this output in the browser console:
 F12 → Console
 ```
 
+This helps understand how the JavaScript code builds the dashboard step by step.
+
 ---
 
 # Future Improvements
 
-Possible future upgrades:
+Possible future upgrades for this project:
 
-* responsive layout improvements
-* search/filter for resources
-* RSS feed integration
-* API integrations (Hacker News / GitHub)
-* bookmarking favorite resources
-* dark/light mode toggle
+- improved responsive layout
+- search or filtering of resources
+- RSS feed integration
+- API integrations (GitHub / Hacker News)
+- bookmarking favorite resources
+- light/dark mode toggle
+- resource sorting options
 
 ---
 
@@ -163,8 +241,10 @@ Possible future upgrades:
 
 Learning project — actively improving while studying web development.
 
+The dashboard is designed to grow as new technologies, tools, and developer resources are discovered.
+
 ---
 
 # Author
 
-Created as part of a personal web development learning journey.
+Created as part of a personal **web development learning journey**.

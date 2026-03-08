@@ -46,7 +46,7 @@ body {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 
@@ -93,4 +93,22 @@ a:hover {
   text-align: center;
   padding: 20px;
   color: #94a3b8;
+}
+
+
+/* Tablet layout */
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }
