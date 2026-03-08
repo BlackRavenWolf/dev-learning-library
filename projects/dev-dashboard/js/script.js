@@ -45,8 +45,8 @@ const devSources = {
     { name: "Theo (t3.gg)", url: "https://youtube.com/@t3dotgg" },
     { name: "Primeagen", url: "https://youtube.com/@ThePrimeTimeagen" },
     { name: "Computerphile", url: "https://youtube.com/@Computerphile" },
-    { name: "Low Level Learning", url: "https://youtube.com/@LowLevelLearning" },
-    { name: "John Hammond", url: "https://youtube.com/@JohnHammond010" }
+    { name: "Low Level Learning", url: "https://www.youtube.com/@LowLevelTV" },
+    { name: "John Hammond", url: "https://www.youtube.com/@_JohnHammond" }
   ]
 };
 
