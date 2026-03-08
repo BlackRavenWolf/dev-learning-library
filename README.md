@@ -8,6 +8,18 @@ The goal of this repository is to build a **personal reference library**, track 
 
 ---
 
+# Current Focus
+
+Currently studying:
+
+- HTML fundamentals
+- CSS layout and styling
+- JavaScript basics
+
+This section will evolve over time as new technologies are explored.
+
+---
+
 # Purpose
 
 This repository exists to support my learning process by:
@@ -32,18 +44,34 @@ The goal is **not to memorize every syntax rule**, but to:
 This repository will grow over time as I study the following technologies.
 
 ### Web Fundamentals
+
 - HTML
 - CSS
 - JavaScript
 
-### Additional Languages (planned)
+### Frontend Development
+
 - React
+- TypeScript
+
+### Backend Development
+
 - Node.js
 - Express
+
+### Databases
+
 - SQL
-- TypeScript
+
+### Additional Languages (Exploration)
+
+Some languages will be explored outside of structured courses to broaden my understanding of programming concepts and scripting environments.
+
 - Python
 - Swift
+- Lua
+
+Lua in particular will be studied independently because it is commonly used as a **lightweight scripting language** in many systems such as game engines, embedded environments, and automation tools.
 
 ---
 
@@ -60,14 +88,17 @@ dev-learning-library/
 ├─ projects/ → small standalone projects
 ├─ experiments/ → quick concept tests and playground code
 ├─ notes/ → personal learning notes and explanations
+├─ project-structure/ → examples of common project folder structures
 │
 ├─ react/ → future React learning examples
 ├─ node/ → Node.js backend experiments
 ├─ express/ → Express.js server examples
 ├─ sql/ → database query exercises
 ├─ typescript/ → typed JavaScript experiments
+│
 ├─ python/ → Python learning examples
-└─ swift/ → Swift experiments
+├─ swift/ → Swift experiments
+└─ lua/ → Lua scripting experiments
 
 ---
 
@@ -86,6 +117,7 @@ Examples include:
 - forms
 - semantic HTML
 - tables
+- media elements
 
 ---
 
@@ -101,6 +133,7 @@ Examples include:
 - borders and shadows
 - flexbox layouts
 - grid layouts
+- positioning
 - responsive design basics
 
 ---
@@ -114,14 +147,17 @@ Examples include:
 - variables
 - strings and numbers
 - comparisons
-- conditional statements
+- conditional statements and logical operators
 - functions
 - arrays
 - objects
 - loops
 - DOM manipulation
 - event listeners
-- basic API requests
+- fetch requests
+- basic API interaction
+
+These examples help demonstrate how JavaScript interacts with the browser and external data sources.
 
 ---
 
@@ -171,6 +207,22 @@ These notes help reinforce understanding and provide quick reference material.
 
 ---
 
+## project-structure/
+
+Contains examples of common folder structures used in real development projects.
+
+Examples may include:
+
+- basic static website structure
+- JavaScript project structure
+- Node.js backend structure
+- React application structure
+- full-stack project structure
+
+Understanding project structure is an important part of learning how real-world applications are organized.
+
+---
+
 ## react/
 
 Will contain examples and experiments related to React components and frontend architecture.
@@ -210,6 +262,21 @@ Future examples and experiments while learning Python.
 ## swift/
 
 Future examples related to Swift development.
+
+---
+
+## lua/
+
+Contains experiments and examples while learning the Lua programming language.
+
+Lua is a lightweight scripting language often used in:
+
+- game development
+- embedded systems
+- scripting environments
+- automation tools
+
+This folder will contain small examples exploring Lua syntax, scripting patterns, and practical use cases.
 
 ---
 
