@@ -1,0 +1,12 @@
+/*
+  Trivia Quiz
+
+  Quiz Screen Layout
+*/
+
+.quiz-screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}

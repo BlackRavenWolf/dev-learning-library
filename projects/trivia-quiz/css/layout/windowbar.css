@@ -1,0 +1,43 @@
+/*
+  Trivia Quiz
+
+  Copyright (c) 2026 Dominique Striekwold
+
+  Licensed under the MIT License.
+  See the LICENSE file in the repository for details.
+
+  Built as part of a web development learning journey.
+*/
+
+.window-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  height: 44px;
+  padding: 0 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 238, 255, 0.88),
+    rgba(232, 220, 255, 0.78)
+  );
+  border-bottom: 1px solid rgba(135, 108, 218, 0.1);
+}
+
+.window-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.window-dot:nth-child(1) {
+  background: #ef6b63;
+}
+
+.window-dot:nth-child(2) {
+  background: #f2be57;
+}
+
+.window-dot:nth-child(3) {
+  background: #75c36a;
+}

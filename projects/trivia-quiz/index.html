@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<!--
+    Trivia Quiz
+
+    Copyright (c) 2026 Dominique Striekwold
+
+    Licensed under the MIT License.
+    See the LICENSE file in the repository for details.
+
+    Built as part of a web development learning journey.
+  -->
+    
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Quiz</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <main class="app">
+    <section class="quiz-container">
+
+      <div class="window-bar">
+        <span class="window-dot"></span>
+        <span class="window-dot"></span>
+        <span class="window-dot"></span>
+      </div>
+
+      <div class="content">
+
+        <section id="startScreen" class="screen start-screen">
+          <div class="card">
+            <h1>Trivia Quiz</h1>
+
+            <p class="intro-text">
+              Test your knowledge across categories and difficulty levels.
+            </p>
+
+            <button id="startBtn" class="primary-btn" type="button">
+              Start Quiz
+            </button>
+
+            <div class="button-row">
+              <button id="openOptionsBtn" class="secondary-btn" type="button">
+                Options
+              </button>
+
+              <button id="openCreditsBtn" class="secondary-btn" type="button">
+                Credits
+              </button>
+            </div>
+
+            <div class="settings-preview">
+              <h2>Current Settings</h2>
+              <p><strong>Difficulty:</strong> <span id="previewDifficulty">Mixed</span></p>
+              <p><strong>Categories:</strong> <span id="previewCategories">All</span></p>
+              <p><strong>Questions:</strong> <span id="previewAmount">10</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="optionsScreen" class="screen options-screen" hidden>
+          <div class="card">
+            <h1>Options</h1>
+
+            <div class="option-group">
+              <h2>Difficulty</h2>
+              <select id="difficultySelect">
+                <option value="mixed">Mixed</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="expert">Expert</option>
+              </select>
+            </div>
+
+            <div class="option-group">
+              <h2>Number of Questions</h2>
+              <select id="amountSelect"></select>
+            </div>
+
+            <div class="option-group">
+              <h2>Categories</h2>
+
+              <div class="category-grid">
+                <label><input type="checkbox" value="general" checked> General</label>
+                <label><input type="checkbox" value="geography" checked> Geography</label>
+                <label><input type="checkbox" value="history" checked> History</label>
+                <label><input type="checkbox" value="science" checked> Science</label>
+                <label><input type="checkbox" value="animals" checked> Animals</label>
+                <label><input type="checkbox" value="food" checked> Food</label>
+                <label><input type="checkbox" value="sports" checked> Sports</label>
+                <label><input type="checkbox" value="movies" checked> Movies</label>
+                <label><input type="checkbox" value="music" checked> Music</label>
+                <label><input type="checkbox" value="technology" checked> Technology</label>
+              </div>
+            </div>
+
+            <button id="closeOptionsBtn" class="primary-btn" type="button">
+              Apply Settings
+            </button>
+          </div>
+        </section>
+
+        <section id="creditsScreen" class="screen credits-screen" hidden>
+          <div class="card">
+            <h1>Credits</h1>
+
+            <p>Trivia Quiz created by Dominique Striekwold.</p>
+            <p>Built as part of a web development learning journey.</p>
+            <p>Questions are used for educational and demo purposes.</p>
+
+            <button id="closeCreditsBtn" class="primary-btn" type="button">
+              Back
+            </button>
+          </div>
+        </section>
+
+        <section id="quizScreen" class="screen quiz-screen" hidden>
+          <header class="quiz-header">
+            <div class="quiz-info">
+              <p id="progress">Question 1 / 10</p>
+              <p id="score">Score: 0</p>
+            </div>
+
+            <div class="score-bar" aria-hidden="true">
+              <div id="scoreBar" class="score-bar-fill"></div>
+            </div>
+
+            <p id="timerText" class="timer-text" aria-live="polite">
+              Time left: 15
+            </p>
+
+            <div class="timer-bar" aria-hidden="true">
+              <div id="timerBar" class="timer-bar-fill"></div>
+            </div>
+
+            <h1>Trivia Quiz</h1>
+          </header>
+
+          <section class="question-box">
+            <h2 id="question">Question text will appear here</h2>
+
+            <form id="quizForm" class="quiz-form">
+              <label class="answer-option">
+                <input id="answer0" type="radio" name="answer" value="0">
+                <span id="answerText0">Answer 1</span>
+              </label>
+
+              <label class="answer-option">
+                <input id="answer1" type="radio" name="answer" value="1">
+                <span id="answerText1">Answer 2</span>
+              </label>
+
+              <label class="answer-option">
+                <input id="answer2" type="radio" name="answer" value="2">
+                <span id="answerText2">Answer 3</span>
+              </label>
+
+              <label class="answer-option">
+                <input id="answer3" type="radio" name="answer" value="3">
+                <span id="answerText3">Answer 4</span>
+              </label>
+            </form>
+
+            <p id="feedback" class="feedback feedback-neutral" aria-live="polite">
+              Select an answer
+            </p>
+
+            <div class="quiz-actions">
+              <button id="restartBtn" class="primary-btn" type="button" style="display: none;">
+                Restart Quiz
+              </button>
+
+              <button id="backToMenuBtn" class="secondary-btn" type="button" style="display: none;">
+                Back to Menu
+              </button>
+            </div>
+          </section>
+        </section>
+
+      </div>
+
+      <footer class="footer">
+        <p>
+          © 2026 Dominique Striekwold •
+          <a
+            href="https://github.com/BlackRavenWolf/trivia-quiz/blob/main/LICENSE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MIT License
+          </a>
+        </p>
+        <p>Trivia Quiz — built as part of a web development learning journey</p>
+      </footer>
+
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

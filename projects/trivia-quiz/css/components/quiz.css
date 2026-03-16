@@ -1,0 +1,225 @@
+/*
+  Trivia Quiz
+
+  Copyright (c) 2026 Dominique Striekwold
+
+  Licensed under the MIT License.
+  See the LICENSE file in the repository for details.
+
+  Built as part of a web development learning journey.
+*/
+
+.quiz-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quiz-header {
+  margin-bottom: 10px;
+}
+
+.quiz-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #5a4697;
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.quiz-info p {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #5a4d99;
+}
+
+.score-bar,
+.timer-bar {
+  width: 100%;
+  height: 12px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.score-bar {
+  background: rgba(201, 182, 244, 0.44);
+  box-shadow:
+    inset 0 1px 2px rgba(98, 71, 180, 0.08),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.18);
+}
+
+.timer-bar {
+  background: rgba(201, 182, 244, 0.36);
+  box-shadow:
+    inset 0 1px 2px rgba(98, 71, 180, 0.06),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.14);
+}
+
+.score-bar-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #aa86f8 0%, #7f52e5 100%);
+  box-shadow:
+    0 0 12px rgba(126, 79, 224, 0.24),
+    0 0 22px rgba(126, 79, 224, 0.1);
+  transition: width 0.35s ease;
+}
+
+.timer-text {
+  margin-bottom: 8px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-align: center;
+  color: #6b57b0;
+}
+
+.timer-bar-fill {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #aa86f8 0%, #7f52e5 100%);
+  box-shadow:
+    0 0 10px rgba(126, 79, 224, 0.18),
+    0 0 18px rgba(126, 79, 224, 0.08);
+  transition: width 1s linear, background 0.25s ease;
+}
+
+#question {
+  margin-bottom: 12px;
+  font-size: 1.14rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  color: #544590;
+}
+
+.quiz-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(80, 62, 148, 0.05);
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    filter 0.18s ease,
+    opacity 0.22s ease;
+}
+
+.answer-option:hover {
+  transform: translateY(-2px) scale(1.01);
+  background: rgba(250, 247, 255, 0.96);
+  border-color: rgba(140, 103, 229, 0.34);
+  box-shadow:
+    0 10px 20px rgba(80, 62, 148, 0.09),
+    0 0 0 1px rgba(155, 114, 240, 0.06);
+}
+
+.answer-option span {
+  font-size: 0.96rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #51457f;
+}
+
+.answer-option:has(input[type="radio"]:checked) {
+  background: linear-gradient(
+    90deg,
+    rgba(170, 134, 248, 0.26) 0%,
+    rgba(127, 82, 229, 0.18) 100%
+  );
+  border-color: #9b72f0;
+  box-shadow:
+    0 10px 22px rgba(126, 79, 224, 0.12),
+    0 0 0 2px rgba(155, 114, 240, 0.08);
+}
+
+.answer-option:has(input[type="radio"]:checked) span {
+  font-weight: 700;
+  color: #493c79;
+}
+
+.answer-option.correct {
+  background: rgba(225, 248, 230, 0.95);
+  border-color: #67b877;
+  box-shadow:
+    0 10px 22px rgba(91, 170, 109, 0.12),
+    0 0 0 2px rgba(103, 184, 119, 0.08);
+}
+
+.answer-option.correct span {
+  font-weight: 700;
+  color: #3f7a4b;
+}
+
+.answer-option.wrong {
+  background: rgba(255, 233, 236, 0.96);
+  border-color: #d16b76;
+  box-shadow:
+    0 10px 22px rgba(209, 107, 118, 0.12),
+    0 0 0 2px rgba(209, 107, 118, 0.08);
+}
+
+.answer-option.wrong span {
+  font-weight: 700;
+  color: #944b56;
+}
+
+.answer-option.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+.quiz-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.feedback {
+  min-height: 22px;
+  margin-top: 10px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: center;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.feedback-neutral {
+  color: #7c73a8;
+}
+
+.feedback-correct {
+  color: #5ca269;
+}
+
+.feedback-wrong {
+  color: #c05b63;
+}
